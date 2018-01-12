@@ -23,9 +23,16 @@ public class NumberGame {
      */
     public boolean guess(int answer) {
 		// TODO your subclass should override this method
-		message = "Sorry, that's not correct";
-		return false;
-    }
+    	if(answer==getUpperBound())
+    	{
+    		return true;
+    	}
+    	else 
+    	{	
+    		message = "Sorry, that's not correct";
+    		return false;
+    	}
+  }
     
     /**
      * Return a message about the most recent call to guess().
