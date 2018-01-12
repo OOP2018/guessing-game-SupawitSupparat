@@ -22,11 +22,13 @@
 				
 				// This loop will end when correct is true
 				while(!correct) {
-					Random rand = new Random();
-					random = rand.nextInt(Max) + 1;
+					random = Min + (int)(Math.random() * ((Max - Min) + 1));
 					correct = game.guess(random);
 					if(game.getMessage().equals("Your answer is WAY too large.")||game.getMessage().equals("Your answer is too large.")){
 							 Max = random;
+						}
+					else if(game.getMessage().equals("Your answer is WAY too small.")||game.getMessage().equals("Your answer is too small.")){
+						 Min = random;
 						}
 				}
 					return random;
