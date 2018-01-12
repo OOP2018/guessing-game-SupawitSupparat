@@ -29,7 +29,7 @@ public class SampleGame extends NumberGame {
 		// don't just copy this.
 		// random.nextInt(n) returns a random integer between 0 and n-1, inclusive.
 		this.secret = rand.nextInt(Math.max(upperbound-10,1)) + 10;
-		super.setMessage("What is the decimal value of 0x" + Integer.toString(secret,base)+" (hexadecimal)?");
+		super.setMessage("I'm thinking of a number between 1 and 100.\r\n" + "" );
 	}
 
     /**
@@ -64,6 +64,6 @@ public class SampleGame extends NumberGame {
     
     @Override
     public String toString() {
-    	return "Convert a number from hexadecimal to decimal.";
+    	return "Guess a secret number.\r\n";
     }
 }
