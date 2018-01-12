@@ -11,7 +11,10 @@ public class Main {
 		GameConsole ui = new GameConsole( );
 		int solution = ui.play( game );
 		//TODO display the answer returned by play
-		System.out.println("play() returned "+solution);
+		System.out.println("Solution is "+ solution);
 		//TODO display how many guesses the user made
+		int guesses = game.getCount();
+		System.out.println("Number of guess is " + guesses);
+		
 	}
 }

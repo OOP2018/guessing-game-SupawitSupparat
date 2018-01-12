@@ -6,7 +6,7 @@ import java.util.Random;
  * @version 2018.01.11
  */
 public class SupGame extends NumberGame{
-
+	private int count = 0 ;
 	 /** upper bound for secret number */
     private int upperBound;
     /** the solution to the game */
@@ -39,18 +39,19 @@ public class SupGame extends NumberGame{
      */
 	
     public boolean guess(int number) {
+    	getCount();
     	if (number == secret) {
     		setMessage("Right! The secret number is "+secret);
     		return true;
     	}
     	if (number < 3*secret/4) {
-    		setMessage("Woah! Your answer is WAY too small.");
+    		setMessage("Your answer is WAY too small.");
     	}
     	else if (number < secret) {
     		setMessage("Your answer is too small.");
     	}
     	else if (number > secret*4/3) {
-    		setMessage("No way! Your answer is WAY too large.");
+    		setMessage("Your answer is WAY too large.");
     	}
     	else /* if (number > secret) */ {
     		setMessage("Your answer is too large.");
@@ -63,6 +64,11 @@ public class SupGame extends NumberGame{
 		return upperBound;
 	}
     
+	/** Get count of user guesses*/
+	public int getCount() {
+		return count++;
+	}
+	
     @Override
     public String toString() {
     	return "Guess a secrret number.";
