@@ -26,13 +26,13 @@
 					else if(correct==false) {
 						if(game.getMessage().toLowerCase().contains("too large")){
 							Max = random-1;
-						}
+							}
 						else if(game.getMessage().toLowerCase().contains("too small")){
 							Min = random+1;
+							}
 						}
 					}
-				}
 					return random;
-			}	
-		}
+				}	
+			}
 		
