@@ -11,7 +11,7 @@ public class GameConsole {
 	 */
 	
 		/** play the game. */
-	public int play(NumberGame game) {
+		public int play(NumberGame game) {
 		Scanner console = new Scanner(System.in);
 		boolean correct=false;
 		int guess=0;
@@ -23,13 +23,13 @@ public class GameConsole {
 		System.out.println( game.getMessage() );
 		
 		// This loop will end when correct is true
-		while(!correct) {
-		System.out.print("Your Guess? ");
-		guess = console.nextInt();
-		correct = game.guess(guess);
-		System.out.println( game.getMessage() );
-		}
-		return guess;
+			while(!correct) {
+					System.out.print("Your Guess? ");
+					guess = console.nextInt();
+					correct = game.guess(guess);
+					System.out.println( game.getMessage() );
+				}
+			return guess;
 	}
 	
 }

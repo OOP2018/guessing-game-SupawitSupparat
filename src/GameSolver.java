@@ -1,5 +1,4 @@
 		import java.util.Random;
-		import java.util.Scanner;
 		public class GameSolver {
 		
 			/** 
@@ -10,27 +9,30 @@
 			
 				/** play the game. */
 			public int play(NumberGame game) {
-				
+				System.out.println(game.toString()); 
 				boolean correct=false;
-				int random=0,Min=0,Max=game.getUpperBound();
-				
-				// describe the game
-				System.out.println( game.toString() );
-				
-				// This is just an example.
-				System.out.println( game.getMessage() );
+				int random=0;
+				int Min=0;
+				int Max=game.getUpperBound();
 				
 				// This loop will end when correct is true
+				
 				while(!correct) {
-					random = Min + (int)(Math.random() * ((Max - Min) + 1));
+					random = Min + (Max-Min) / 2;
 					correct = game.guess(random);
-					if(game.getMessage().equals("Your answer is WAY too large.")||game.getMessage().equals("Your answer is too large.")){
-							 Max = random;
+					if(correct == true){
+							break;
 						}
-					else if(game.getMessage().equals("Your answer is WAY too small.")||game.getMessage().equals("Your answer is too small.")){
-						 Min = random;
+					else if(correct==false) {
+						if(game.getMessage().toLowerCase().contains("too large")){
+							Max = random-1;
 						}
+						else if(game.getMessage().toLowerCase().contains("too small")){
+							Min = random+1;
+						}
+					}
 				}
 					return random;
 			}	
 		}
+		

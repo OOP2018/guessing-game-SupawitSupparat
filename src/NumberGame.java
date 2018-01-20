@@ -22,16 +22,10 @@ public class NumberGame {
      * @return true if correct, false otherwise
      */
     public boolean guess(int answer) {
-		// TODO your subclass should override this method
-    	if(answer==getUpperBound())
-    	{
-    		return true;
-    	}
-    	else 
-    	{	
+   
     		message = "Sorry, that's not correct";
     		return false;
-    	}
+    	
   }
     
     /**

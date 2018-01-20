@@ -12,8 +12,8 @@ public class SupGame extends NumberGame{
     /** the solution to the game */
     private int secret;
     
-	/** count guesses */
-//TODO add an attribute to count guesses
+
+
 
     /** Initialize a new default game. */
     public SupGame()
@@ -53,7 +53,7 @@ public class SupGame extends NumberGame{
     	else if (number > secret*4/3) {
     		setMessage("Your answer is WAY too large.");
     	}
-    	else /* if (number > secret) */ {
+    	else {
     		setMessage("Your answer is too large.");
     	}
     	return false;
@@ -71,14 +71,7 @@ public class SupGame extends NumberGame{
 	
     @Override
     public String toString() {
-    	return "Guess a secrret number.";
+    	return "Guess a secret number.";
     }
-	
-	
-	
-	
-	
-	
-	
 	
 }
